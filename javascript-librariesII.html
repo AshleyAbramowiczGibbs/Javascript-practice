@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/gantt/highcharts-gantt.js"></script>
+</head>
+<body>
+
+  <h1>hello</h1>
+
+<script>Highcharts.ganttChart('container', {
+    title: {
+        text: 'Simple Gantt Chart'
+    },
+        
+    series: [{
+        name: 'Project 1',
+        data: [{
+            id: 's',
+            name: 'Start prototype',
+            start: Date.UTC(2014, 10, 18),
+            end: Date.UTC(2014, 10, 20)
+        }, {
+            id: 'b',
+            name: 'Develop',
+            start: Date.UTC(2014, 10, 20),
+            end: Date.UTC(2014, 10, 25),
+            dependency: 's'
+        }, {
+            id: 'a',
+            name: 'Run acceptance tests',
+            start: Date.UTC(2014, 10, 23),
+            end: Date.UTC(2014, 10, 26)
+        }, {
+            name: 'Test prototype',
+            start: Date.UTC(2014, 10, 27),
+            end: Date.UTC(2014, 10, 29),
+            dependency: ['a', 'b']
+        }]
+    }]
+});</script>
+
+  
+</body>
+</html>
